@@ -1,0 +1,9 @@
+<div class="row">
+    <ul class="list-unstyled">
+        <li ng-repeat="contact in contacts">
+            <a ng-href="#/contacts/{{contact.id}}">
+                <h3>{{contact.lastName}}<span ng-if="contact.lastName">,</span> {{contact.firstName}}<span ng-if="contact.age"> - {{contact.age}}</span></h3>
+            </a>
+        </li>
+    </ul>
+</div>

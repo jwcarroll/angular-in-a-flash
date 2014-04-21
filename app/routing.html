@@ -1,0 +1,76 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="angular-in-a-flash">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="container" ng-view>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script type="text/javascript">
+    var app = angular.module('angular-in-a-flash', ['ngRoute']);
+
+    app.service('contactsService', function () {
+        var _this = this;
+
+        var contacts = [
+            {id: 1, firstName: 'Josh', lastName: 'Carroll', age: 32},
+            {id: 2, firstName: 'Patty', lastName: 'Carroll', age: 33},
+            {id: 3, firstName: 'Hadassah', lastName: 'Carroll', age: 5},
+            {id: 4, firstName: 'Elijah', lastName: 'Carroll', age: 3},
+            {id: 5, firstName: 'Caleb', lastName: 'Carroll', age: 1}
+        ];
+
+        _this.getContacts = function () {
+            return angular.copy(contacts);
+        };
+
+        _this.getContact = function (id) {
+            return _.find(contacts, {id: id});
+        };
+    });
+
+    app.controller('contactsController', function ($scope, contactsService) {
+        $scope.contacts = contactsService.getContacts();
+    });
+
+    app.controller('contactDetailsController', function ($scope, $routeParams, contactsService) {
+        var contactId = parseInt($routeParams.id, 10);
+        $scope.contact = contactsService.getContact(contactId);
+    });
+</script>
+</body>
+</html>

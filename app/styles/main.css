@@ -77,3 +77,38 @@ body {
     border-bottom: 0;
   }
 }
+.tinker-bell-cursor {
+    cursor: url(../images/tinkerbell-dusting.png), auto;
+}
+.animate-tada{
+    -webkit-animation-name: tada;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: tada;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+.animate-wobble{
+    -webkit-animation-name: wobble;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: tada;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+.animate-swing{
+    -webkit-animation-name: swing;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: tada;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+.animate-tada-add, .animate-wobble-add, .animate-swing-add {
+    -webkit-animation: flip 0.5s;
+    animation: flip 0.5s;
+}
+.animate-tada-remove, .animate-wobble-remove, .animate-swing-remove {
+    -webkit-animation: rubberBand 0.5s;
+    animation: rubberBand 0.5s;
+}

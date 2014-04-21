@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lodash" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/app/bower_components/lodash/dist" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/bower_components/lodash/dist" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

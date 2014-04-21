@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularInAflashApp')
+angular.module('angular-in-a-flash')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
